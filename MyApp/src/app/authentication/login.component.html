@@ -1,0 +1,57 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h1 class="panel-title">Login Page</h1>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{'is-invalid': submitted && f.username.errors}"
+        />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+          <span *ngIf="f.username.errors.required">Username is required</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" formControlName="password" class="form-control" [ngClass]="{'is-invalid': submitted && f.password.errors}"
+        />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <span *ngIf="f.password.errors.required">Password is required</span>
+        </div>
+      </div>
+
+      <!-- <div ngModelGroup='passwordGroup' [class.has-error]="confirmPassword.invalid && confirmPassword.touched && !confirmPassword.errors?.required">
+        <div class="form-group" [class.has-error]="password.invalid && password.touched">
+          <label for="password" class="control-label">Password</label>
+          <input id="password" type="text" name="password" class="form-control" (input)="confirmPassword.control.updateValueAndValidity()"
+            required #password="ngModel" [(ngModel)]='user.password' />
+          <span class="help-block" *ngIf="password.invalid && password.touched">
+            Password is required
+          </span>
+        </div>
+
+        <div class="form-group" [class.has-error]="confirmPassword.invalid && confirmPassword.touched">
+          <label for="confirmPassword" class="control-label">Confirm Password</label>
+          <input id="confirmPassword" type="text" name="confirmPassword" class="form-control" required appConfirmEqualValidator="password"
+            #confirmPassword="ngModel" [(ngModel)]='user.confirmPassword' />
+          <span class="help-block" *ngIf="confirmPassword.errors?.required && confirmPassword.touched">
+            Confirm Password is required
+          </span>
+          <span class="help-block" *ngIf="confirmPassword.errors?.notEqula && !confirmPassword.errors?.required && confirmPassword.touched">
+            Password does not matched
+          </span>
+        </div>
+      </div> -->
+    </div>
+    <div class="panel-footer">
+      <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Login</button>
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+        />
+        <a [routerLink]="['/register']" class="btn btn-link">Register</a>
+        <span *ngIf="errorMessage" class="error">{{ errorMessage }}, enter correct details</span>
+      </div>
+    </div>
+  </div>
+</form>

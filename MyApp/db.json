@@ -1,0 +1,52 @@
+{
+  "employees": [
+    {
+      "id": 2,
+      "name": "Mudassar k",
+      "gender": "Male",
+      "contactPreference": "Mobile",
+      "email": "mudassar.khan@company.com",
+      "dateOfBirth": "1990-08-21T18:30:00.000Z",
+      "department": "2",
+      "isActive": true,
+      "photoPath": "assets/images/Mudassar.jpg",
+      "phoneNumber": "9849839843"
+    },
+    {
+      "id": 3,
+      "name": "Aatir S",
+      "gender": "Male",
+      "contactPreference": "Mobile",
+      "email": "aatir.sayyad@company.com",
+      "dateOfBirth": "04/12/2008",
+      "department": "5",
+      "isActive": true,
+      "photoPath": "assets/images/Aatir.jpg",
+      "phoneNumber": "9849839843"
+    },
+    {
+      "id": 4,
+      "name": "Tausif ",
+      "gender": "Male",
+      "email": "tausif.sc@gmail.com",
+      "phoneNumber": "985555",
+      "contactPreference": "Mobile",
+      "dateOfBirth": "1990-12-24T18:30:00.000Z",
+      "department": "2",
+      "isActive": true,
+      "photoPath": "assets/images/Tausif.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Moin",
+      "gender": "Male",
+      "email": "trkhan09@gmail.com",
+      "phoneNumber": "9849839843",
+      "dateOfBirth": "2008-04-11T18:30:00.000Z",
+      "department": "1",
+      "isActive": true,
+      "photoPath": "assets/images/Aatir.jpg",
+      "contactPreference": "Mobile"
+    }
+  ]
+}

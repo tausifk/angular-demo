@@ -1,0 +1,60 @@
+<app-accordion [hasJustViewed]="_activeRoutParam === employee.id" [title]="employee.name" [isHidden]="true">
+  <div class="col-xs-10 myPanelBody">
+    <div class="row verticalAlign">
+      <div class="col-xs-4">
+        <img [src]="employee.photoPath" class="imageClass">
+      </div>
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-6">
+            Gender
+          </div>
+          <div class="col-xs-6">
+            : {{employee.gender}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            Email
+          </div>
+          <div class="col-xs-6">
+            : {{employee.email}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            Department
+          </div>
+          <div class="col-xs-6" [ngSwitch]="employee.department">
+            :
+            <span *ngSwitchCase="1">HR</span>
+            <span *ngSwitchCase="2">IT</span>
+            <span *ngSwitchCase="3">ADM</span>
+            <span *ngSwitchCase="4">SRV</span>
+            <span *ngSwitchCase="5">MF</span>
+            <span *ngSwitchDefault>N/A</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            DOB
+          </div>
+          <div class="col-xs-6">
+            : {{employee.dateOfBirth | date}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="myPanelFooter">
+    <button class="btn btn-primary" *ngIf="!confirmDelete" (click)="viewEmployee()">View</button>
+    <button class="btn btn-primary" *ngIf="!confirmDelete" (click)="editEmployee()">Edit</button>
+    <span *ngIf="confirmDelete">
+      <span><b>Are you sure you want to delete?</b></span>
+      <button class="btn btn-danger" (click)="deleteEmployee()">Yes</button>
+      <button class="btn btn-primary" (click)="confirmDelete=false">No</button>
+    </span>
+    <button class="btn btn-danger" *ngIf="!confirmDelete" (click)="confirmDelete=true">Delete</button>
+  </div>
+</app-accordion>

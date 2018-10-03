@@ -1,0 +1,11 @@
+.imageClass{
+    width: 200px;
+    height: 200px;
+}
+.verticalAlign{
+    display: flex;
+    align-items: center;
+}
+.pointerCursor {
+    cursor: pointer;
+}

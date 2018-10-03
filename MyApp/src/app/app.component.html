@@ -1,0 +1,34 @@
+<div class="container">
+    <nav class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <div class="navbar-brand">
+                <a href="#">TechWorld</a>
+            </div>
+        </div>
+        <ul class="nav navbar-nav">
+            <li>
+                <a routerLink="list">List</a>
+            </li>
+            <li>
+                <a routerLink="edit/0">Create</a>
+            </li>
+            <li>
+                <a (click)="logoutFunction()" style="cursor: pointer;">Logout</a>
+            </li>
+            <!-- <li>
+                <a><b>Welcome, {{ userLogged | uppercase }}</b></a>
+            </li> -->
+        </ul>
+    </nav>
+    <div class="lds-roller" *ngIf="showLoadingIndicator">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <router-outlet></router-outlet>
+</div>
